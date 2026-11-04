@@ -62,6 +62,9 @@ jobs:
           git push origin HEAD:main --no-verify
           echo "VERSION=$next" >> $env:GITHUB_ENV
 
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
       - name: Install node-gyp
         run: npm install -g node-gyp
 
